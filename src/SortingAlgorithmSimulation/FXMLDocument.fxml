@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="651.0" prefWidth="1268.0" styleClass="background" stylesheets="@AppStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SortingAlgorithmSimulation.FXMLDocumentController">
+    <children>
+        <Button fx:id="runButton" layoutX="18.0" layoutY="357.0" onAction="#handleRunAction" prefHeight="22.0" prefWidth="107.0" text="Run" />
+
+        <ListView fx:id="list" layoutX="8.0" layoutY="39.0" prefHeight="314.0" prefWidth="412.0" />
+        <Button fx:id="stepButton" layoutX="134.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleStepAction" prefHeight="22.0" prefWidth="80.0" text="Step" />
+        <Button fx:id="resetButton" layoutX="229.0" layoutY="357.0" mnemonicParsing="false" onAction="#reset" prefHeight="22.0" prefWidth="85.0" text="Reset" />
+        <Button fx:id="inputButton" layoutX="323.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleDataInput" text="Input Data" />
+
+
+<Slider fx:id="slider" layoutX="143.0" layoutY="624.0" prefHeight="17.0" prefWidth="280.0" />
+
+
+<Label layoutX="32.0" layoutY="14.0" prefHeight="25.0" prefWidth="193.0" text="Algorithm Text Animation" />
+
+
+<TitledPane animated="false" layoutX="427.0" layoutY="36.0" prefHeight="207.0" prefWidth="142.0" styleClass="background" text="Algorithm">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="184.0" prefWidth="127.0">
+   
+    
+   <children> 
+       <RadioButton fx:id="bubbleRadioButton" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" selected="true" text="Bubble  Sort" userData="Bubble Sort">
+         <toggleGroup>
+     <ToggleGroup fx:id="algorithmToggleGroup" />
+        </toggleGroup>
+
+   </RadioButton> 
+       
+        <RadioButton fx:id="selectionRadioButton" layoutX="19.0" layoutY="38.0" mnemonicParsing="false" text="Selection Sort" toggleGroup="$algorithmToggleGroup" userData="Selection Sort" /> 
+        <RadioButton fx:id="insertionRadioButton" layoutX="20.0" layoutY="63.0" mnemonicParsing="false" text="Insertion Sort" toggleGroup="$algorithmToggleGroup" userData="Insertion Sort" />
+        <RadioButton fx:id="quickRadioButton" layoutX="19.0" layoutY="90.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="77.0" text="Quick Sort" toggleGroup="$algorithmToggleGroup" userData="Quick Sort" />
+            <RadioButton fx:id="binaryRadioButton" layoutX="20.0" layoutY="117.0" mnemonicParsing="false" text="Binary Search" toggleGroup="$algorithmToggleGroup" userData="Binary Search" />
+                  <RadioButton fx:id="linearRadioButton" layoutX="20.0" layoutY="147.0" mnemonicParsing="false" text="Linear Search" toggleGroup="$algorithmToggleGroup" userData="Linear Search" />   
+   </children> 
+   
+    </AnchorPane>
+    
+  </content>
+  
+</TitledPane>
+ 
+ <Label layoutX="9.0" layoutY="624.0" prefHeight="17.0" prefWidth="57.0" text="Speed:   " />
+ <Label fx:id="speedLabel" layoutX="63.0" layoutY="624.0" prefHeight="17.0" prefWidth="63.0" />
+<TextField fx:id="inputText1" layoutX="608.0" layoutY="20.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+<TextField fx:id="inputText2" layoutX="606.0" layoutY="51.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+<TextField fx:id="inputText3" layoutX="606.0" layoutY="84.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+<TextField fx:id="inputText4" layoutX="606.0" layoutY="114.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+<TextField fx:id="inputText5" layoutX="606.0" layoutY="145.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+<TextField fx:id="inputText6" layoutX="608.0" layoutY="177.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+<Button fx:id="userInputButton" layoutX="611.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleDataSetUp" prefHeight="25.0" prefWidth="85.0" text="Enter" visible="false" />
+      <Label fx:id="dataInputLabel" layoutX="602.0" layoutY="21.0" prefHeight="22.0" prefWidth="94.0" text="Enter data below" visible="false" />
+      <Label fx:id="targetLabel" layoutX="307.0" layoutY="371.0" prefHeight="17.0" prefWidth="76.0" text="Search Target" visible="false" />
+      <Label fx:id="targetFieldLabel" layoutX="395.0" layoutY="371.0" prefHeight="17.0" prefWidth="63.0" visible="false" />
+      <AnchorPane fx:id="bottomPane" layoutX="9.0" layoutY="509.0" prefHeight="94.0" prefWidth="57.0">
+         <children>
+            <Label fx:id="label3" layoutX="11.0" layoutY="77.0" prefHeight="17.0" prefWidth="44.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topPane2" layoutX="683.0" layoutY="384.0" prefHeight="80.0" prefWidth="57.0">
+         <children>
+      <Label fx:id="label2" layoutX="7.0" prefHeight="17.0" prefWidth="44.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topPane1" layoutX="14.0" layoutY="390.0" prefHeight="80.0" prefWidth="57.0">
+         <children>
+      <Label fx:id="label1" layoutX="7.0" layoutY="6.0" prefHeight="17.0" prefWidth="44.0" />
+         </children>
+      </AnchorPane><HBox fx:id="rec1" layoutX="14.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+<children>
+
+
+<Text fx:id="text1" fill="#d01c1c" layoutX="121.0" layoutY="540.0" stroke="#fffefe" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+</children></HBox>
+<HBox fx:id="rec2" layoutX="85.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+<children>
+<Text fx:id="text2" fill="#d01c1c" layoutX="85.0" layoutY="560.0" stroke="#fcf9f9" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+</children>
+</HBox>
+<HBox fx:id="rec3" layoutX="164.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+<children>
+<Text fx:id="text3" fill="#c91616" layoutX="173.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+</children>
+</HBox>
+<HBox fx:id="rec4" layoutX="240.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+<children>
+<Text fx:id="text4" fill="#c91010" layoutX="240.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="44.0" />
+</children>
+</HBox>
+<HBox fx:id="rec5" layoutX="314.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+<children>
+<Text fx:id="text5" fill="#d31b1b" layoutX="310.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+</children>
+</HBox>
+<HBox fx:id="rec6" layoutX="389.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+<children>
+<Text fx:id="text6" fill="#c61313" layoutX="373.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+</children>
+</HBox>
+      <TextField fx:id="inputText7" layoutX="608.0" layoutY="214.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+      <TextField fx:id="inputText8" layoutX="608.0" layoutY="246.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+      <TextField fx:id="inputText9" layoutX="608.0" layoutY="279.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+      <TextField fx:id="inputText10" layoutX="608.0" layoutY="314.0" prefHeight="25.0" prefWidth="85.0" visible="false" />
+      <HBox fx:id="rec7" layoutX="460.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+         <children>
+            <Text fx:id="text7" fill="#c61313" layoutX="373.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="rec8" layoutX="533.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+         <children>
+            <Text fx:id="text8" fill="#c61313" layoutX="373.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="rec9" layoutX="608.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+         <children>
+            <Text fx:id="text9" fill="#c61313" layoutX="373.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="rec10" layoutX="680.0" layoutY="473.0" prefHeight="35.0" prefWidth="63.0" style="-fx-border-color: blue;">
+         <children>
+            <Text fx:id="text10" fill="#c61313" layoutX="373.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="45.0" />
+         </children>
+      </HBox>
+      <Label fx:id="searchLabel" layoutX="422.0" layoutY="248.0" prefHeight="22.0" prefWidth="76.0" text="Enter Search" />
+      <TextField fx:id="searchInput" disable="true" layoutX="504.0" layoutY="247.0" prefHeight="25.0" prefWidth="72.0" />
+      <Label fx:id="searchResultLabel" layoutX="424.0" layoutY="302.0" prefHeight="25.0" prefWidth="179.0" text="searching" />
+      <Label layoutX="424.0" layoutY="328.0" prefHeight="22.0" prefWidth="57.0" text="Swaps" />
+      <Label fx:id="NumberOfSwapLabel" layoutX="470.0" layoutY="327.0" prefHeight="25.0" prefWidth="57.0" />
+      <Label fx:id="currentAlgorithmLabel" layoutX="244.0" layoutY="13.0" prefHeight="25.0" prefWidth="170.0" />
+      <Button fx:id="searchButton" layoutX="504.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="16.0" prefWidth="85.0" text="Enter" visible="false" />
+      <Label layoutX="803.0" layoutY="451.0" prefHeight="17.0" prefWidth="225.0" text="Data Structure  and Algorithm Videos" />
+       <Hyperlink fx:id="queue" layoutX="820.0" layoutY="507.0" onAction="#handleHyperlink" text="Queue" />
+      <Hyperlink fx:id="stack" layoutX="821.0" layoutY="474.0" onAction="#handleHyperlink" text="Stack" />
+      <Hyperlink fx:id="linklist" layoutX="827.0" layoutY="543.0" onAction="#handleHyperlink" text="Singly LinkedList" />
+      <Hyperlink fx:id="recursion" layoutX="923.0" layoutY="475.0" onAction="#handleHyperlink" text="Recursion" />
+      <Hyperlink fx:id="tree" layoutX="938.0" layoutY="507.0" onAction="#handleHyperlink" text="Trees" />
+      <Hyperlink layoutX="976.0" layoutY="474.0" />
+      <WebView fx:id="webView" layoutX="710.0" layoutY="35.0" prefHeight="358.0" prefWidth="550.0" />
+    </children>
+    
+</AnchorPane>
